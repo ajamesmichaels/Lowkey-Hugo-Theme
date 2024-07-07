@@ -5,7 +5,7 @@ const baseDir = path.join(__dirname, '..');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
+  darkMode: 'selector',
   content: [
     `${baseDir}/themes/**/layouts/**/*.html`,
     `${baseDir}/content/**/layouts/**/*.html`,
