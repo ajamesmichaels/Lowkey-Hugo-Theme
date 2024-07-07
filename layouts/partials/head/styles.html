@@ -8,6 +8,19 @@
 {{/* Processor */}} 
 {{- $styles := slice $tailwind | resources.Concat "css/app.css" -}} 
 
+{{/*Tailwind Darkmode*/}}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const theme = localStorage.getItem('theme');
+
+    if (!theme) {
+      setTheme('dark');
+    } else {
+      setTheme(theme);
+    }
+  });
+</script>
+
 {{/* Output */}} 
 {{- if eq hugo.Environment "development" -}}
     <link rel="stylesheet" href="{{ $styles.Permalink | absURL }}" />
